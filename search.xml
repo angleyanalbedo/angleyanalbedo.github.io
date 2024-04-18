@@ -76,20 +76,6 @@
       </tags>
   </entry>
   <entry>
-    <title>关于认真遵循文档</title>
-    <url>/2024/04/17/%E5%85%B3%E4%BA%8E%E8%AE%A4%E7%9C%9F%E9%81%B5%E5%BE%AA%E6%96%87%E6%A1%A3/</url>
-    <content><![CDATA[<h1 id="认真读文档即使是你熟知的领域"><a href="#认真读文档即使是你熟知的领域" class="headerlink" title="认真读文档即使是你熟知的领域"></a>认真读文档即使是你熟知的领域</h1><blockquote>
-<p>当我们在这个领域有所了解时，我们看文档就会习惯性的跳过去观看<br>但是这就会导致我们安装出错，安装程序也是如同写代码一般<br>在安装之后，再去排查错误是找不到的</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>杂项</category>
-      </categories>
-      <tags>
-        <tag>杂项</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>关于NERF</title>
     <url>/2024/04/18/%E5%85%B3%E4%BA%8ENERF/</url>
     <content><![CDATA[]]></content>
@@ -121,6 +107,20 @@
       </categories>
       <tags>
         <tag>butterfly</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于认真遵循文档</title>
+    <url>/2024/04/17/%E5%85%B3%E4%BA%8E%E8%AE%A4%E7%9C%9F%E9%81%B5%E5%BE%AA%E6%96%87%E6%A1%A3/</url>
+    <content><![CDATA[<h1 id="认真读文档即使是你熟知的领域"><a href="#认真读文档即使是你熟知的领域" class="headerlink" title="认真读文档即使是你熟知的领域"></a>认真读文档即使是你熟知的领域</h1><blockquote>
+<p>当我们在这个领域有所了解时，我们看文档就会习惯性的跳过去观看<br>但是这就会导致我们安装出错，安装程序也是如同写代码一般<br>在安装之后，再去排查错误是找不到的</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>杂项</tag>
       </tags>
   </entry>
 </search>
