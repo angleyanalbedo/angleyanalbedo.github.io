@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>butterfly图片部署在gitpage不显示</title>
+      <link href="/2024/04/18/butterfly%E5%9B%BE%E7%89%87%E9%83%A8%E7%BD%B2%E5%9C%A8gitpage%E4%B8%8D%E6%98%BE%E7%A4%BA/"/>
+      <url>/2024/04/18/butterfly%E5%9B%BE%E7%89%87%E9%83%A8%E7%BD%B2%E5%9C%A8gitpage%E4%B8%8D%E6%98%BE%E7%A4%BA/</url>
+      
+        <content type="html"><![CDATA[<h1 id="butterfly图片部署在gitpage不显示"><a href="#butterfly图片部署在gitpage不显示" class="headerlink" title="butterfly图片部署在gitpage不显示"></a>butterfly图片部署在gitpage不显示</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在butterfly中的<code>_config.butterfly.yml</code>中的图片设置插入图片，图片在本地显示正常，部署到gitpage后图片不显示。</p><pre><code>index_img: img/xxx.jpg```yml## 解决方法在图片地址前加上`你的网址`，即`https://xxxx.github.io/`。</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> butterfly </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> butterfly </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>关于安装butterfly的注意事项</title>
       <link href="/2024/04/17/%E5%85%B3%E4%BA%8E%E5%AE%89%E8%A3%85butterfly%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/"/>
       <url>/2024/04/17/%E5%85%B3%E4%BA%8E%E5%AE%89%E8%A3%85butterfly%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</url>
@@ -13,14 +38,14 @@
       
       <categories>
           
-          <category> 杂项 </category>
+          <category> butterfly </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 杂项 </tag>
+            <tag> butterfly </tag>
             
         </tags>
       
