@@ -6,7 +6,7 @@
     <content><![CDATA[<h1 id="butterfly图片部署在gitpage不显示"><a href="#butterfly图片部署在gitpage不显示" class="headerlink" title="butterfly图片部署在gitpage不显示"></a>butterfly图片部署在gitpage不显示</h1><h2 id="topimg等banner不显示"><a href="#topimg等banner不显示" class="headerlink" title="topimg等banner不显示"></a>topimg等banner不显示</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>在butterfly中的<code>_config.butterfly.yml</code>中的图片设置插入图片，图片在本地显示正常，部署到gitpage后图片不显示。</p>
 <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">index_img:</span> <span class="string">img/xxx.jpg</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>在图片地址前加上<code>你的网址</code>，即<code>https://xxxx.github.io/</code>。</p>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>在图片地址前加上<code>你的网址</code>，即<code>https://xxxx.github.io/</code>。<br>还有可能是你需要使用绝对路径，即<code>/img/xxx.jpg</code>而不是 <code>img/xxx.jpg</code></p>
 <h2 id="文章的cover显示404"><a href="#文章的cover显示404" class="headerlink" title="文章的cover显示404"></a>文章的cover显示404</h2><h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h3><p>文章的cover显示404，当然本地也显示404图片</p>
 <h3 id="解决方法-1"><a href="#解决方法-1" class="headerlink" title="解决方法"></a>解决方法</h3><p>看看图片的链接是不是写错了</p>
 ]]></content>
@@ -21,10 +21,10 @@
     <title>butterfly建立gitalk</title>
     <url>/2024/04/18/butterfly%E5%BB%BA%E7%AB%8Bgitalk/</url>
     <content><![CDATA[<h3 id="创建-OAuth-Application"><a href="#创建-OAuth-Application" class="headerlink" title="创建 OAuth Application"></a>创建 OAuth Application</h3><p><code>创建 OAuth Application</code> 的过程所有 hexo 主题都是通用的，后面的配置文件主题之间有所差异。</p>
-<p>首先，先跳转到 OAuth Apps 的创建界面。<br>具体路径是 <code>Settings</code>-<code>Developer settings</code>-<code>OAuth Apps</code>。<br><a href="butterfly%E5%BB%BA%E7%AB%8Bgitalk/1.png">1</a></p>
-<p><a href="butterfly%E5%BB%BA%E7%AB%8Bgitalk/2.png">2</a></p>
-<p><a href="butterfly%E5%BB%BA%E7%AB%8Bgitalk/3.png">3</a></p>
-<h3 id="点击-Register-a-new-application，创建一个新的-OAuth-Application。"><a href="#点击-Register-a-new-application，创建一个新的-OAuth-Application。" class="headerlink" title="点击 Register a new application，创建一个新的 OAuth Application。"></a>点击 Register a new application，创建一个新的 OAuth Application。</h3><p><a href="butterfly%E5%BB%BA%E7%AB%8Bgitalk/4.png">4</a><br>以下是对这些字段的说明</p>
+<p>首先，先跳转到 OAuth Apps 的创建界面。<br>具体路径是 <code>Settings</code>-<code>Developer settings</code>-<code>OAuth Apps</code>。<br><img src="1.png"></p>
+<p><img src="2.png"></p>
+<p><img src="3.png"></p>
+<h3 id="点击-Register-a-new-application，创建一个新的-OAuth-Application。"><a href="#点击-Register-a-new-application，创建一个新的-OAuth-Application。" class="headerlink" title="点击 Register a new application，创建一个新的 OAuth Application。"></a>点击 Register a new application，创建一个新的 OAuth Application。</h3><p><img src="4.png"><br>以下是对这些字段的说明</p>
 <table>
 <thead>
 <tr>
