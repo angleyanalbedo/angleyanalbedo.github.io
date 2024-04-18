@@ -1,122 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>butterfly建立gitalk</title>
-      <link href="/2024/04/18/butterfly%E5%BB%BA%E7%AB%8Bgitalk/"/>
-      <url>/2024/04/18/butterfly%E5%BB%BA%E7%AB%8Bgitalk/</url>
-      
-        <content type="html"><![CDATA[<h3 id="创建-OAuth-Application"><a href="#创建-OAuth-Application" class="headerlink" title="创建 OAuth Application"></a>创建 OAuth Application</h3><p><code>创建 OAuth Application</code> 的过程所有 hexo 主题都是通用的，后面的配置文件主题之间有所差异。</p><p>首先，先跳转到 OAuth Apps 的创建界面。<br>具体路径是 <code>Settings</code>-<code>Developer settings</code>-<code>OAuth Apps</code>。<br><a href="butterfly%E5%BB%BA%E7%AB%8Bgitalk/1.png">1</a></p><p><a href="butterfly%E5%BB%BA%E7%AB%8Bgitalk/2.png">2</a></p><p><a href="butterfly%E5%BB%BA%E7%AB%8Bgitalk/3.png">3</a></p><h3 id="点击-Register-a-new-application，创建一个新的-OAuth-Application。"><a href="#点击-Register-a-new-application，创建一个新的-OAuth-Application。" class="headerlink" title="点击 Register a new application，创建一个新的 OAuth Application。"></a>点击 Register a new application，创建一个新的 OAuth Application。</h3><p><a href="butterfly%E5%BB%BA%E7%AB%8Bgitalk/4.png">4</a><br>以下是对这些字段的说明</p><table><thead><tr><th>表单字段</th><th></th><th>说明</th></tr></thead><tbody><tr><td>Application name</td><td>必填</td><td>应用名字，随便填</td></tr><tr><td>Homepage URL</td><td>必填</td><td>填写你的博客首页地址</td></tr><tr><td>Application description</td><td>选填</td><td>应用描述，随便填</td></tr><tr><td>Authorization callback URL</td><td>必填</td><td>登录 Github 账号后，要跳转回去，这个地址就是跳转回去的地址</td></tr></tbody></table><p><a href="butterfly%E5%BB%BA%E7%AB%8Bgitalk/5.png">5</a><br>填写完之后，会显示这样一个界面，其中 <code>Client ID</code> 和 <code>Client Secret</code> 很重要，待会要用，这里我防止自己的应用被滥用，就先打码了。</p><h3 id="修改-butterfly-配置文件"><a href="#修改-butterfly-配置文件" class="headerlink" title="修改 butterfly 配置文件"></a>修改 butterfly 配置文件</h3><p><strong>之前的步骤所有的 Gittalk 配置都是一样的，接下来的配置只针对 <a href="https://github.com/jerryc127/hexo-theme-butterfly">butterfly</a> 主题，主题与主题之间可能有些不一样。</strong></p><p>打开 <code>_data/butterfly.yml</code>，找到 gittalk 的配置项。<br>把之前获取 <code>Client ID</code> 和 <code>Client Secret</code> 分别填到 <code>client_id</code> 和 <code>client_secret</code> 里面。</p><p>repo 填一个仓库名就好了，我这里填的就是 io 的仓库。当然，你也可以去新建一个。</p><p>owner 填自己的 github 账号名。</p><p>admin 填 repo 仓库的拥有者，hexo 解析的时候会使用 <code>admin/repo</code> 去定位仓库的位置。</p><blockquote><p>比较容易犯错的地方是 repo 填了 <code>nonlinearthink/nonlinearthink.github.io</code> 这样的名字，注意，repo 只需要填仓库名字，不需要加拥有者，拥有者放到 admin 里面。</p></blockquote><p><strong>关于其他的字段解释可见<a href="https://demo.jerryc.me/posts/ceeb73f/#%E8%A9%95%E8%AB%96">官方博客</a></strong></p><h3 id="更新、发布"><a href="#更新、发布" class="headerlink" title="更新、发布"></a>更新、发布</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo g </span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure><h2 id="gitalk踩坑之error-not-found"><a href="#gitalk踩坑之error-not-found" class="headerlink" title="gitalk踩坑之error not found"></a>gitalk踩坑之error not found</h2><p>出现error not found的问题，一般来说就是GitHub仓库的链接出现了问题，笔者部署的时候就出现了这个问题，死活不知道那里配置有误。最后，笔者明察秋毫，发现竟然是我的仓库设置了private，没有公开。最后，新建public的仓库之后，问题迎刃而解，希望我踩的坑能够给大家一点启发。</p>]]></content>
-      
-      
+<search>
+  <entry>
+    <title>butterfly图片部署在gitpage不显示</title>
+    <url>/2024/04/18/butterfly%E5%9B%BE%E7%89%87%E9%83%A8%E7%BD%B2%E5%9C%A8gitpage%E4%B8%8D%E6%98%BE%E7%A4%BA/</url>
+    <content><![CDATA[<h1 id="butterfly图片部署在gitpage不显示"><a href="#butterfly图片部署在gitpage不显示" class="headerlink" title="butterfly图片部署在gitpage不显示"></a>butterfly图片部署在gitpage不显示</h1><h2 id="topimg等banner不显示"><a href="#topimg等banner不显示" class="headerlink" title="topimg等banner不显示"></a>topimg等banner不显示</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>在butterfly中的<code>_config.butterfly.yml</code>中的图片设置插入图片，图片在本地显示正常，部署到gitpage后图片不显示。</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">index_img:</span> <span class="string">img/xxx.jpg</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>在图片地址前加上<code>你的网址</code>，即<code>https://xxxx.github.io/</code>。</p>
+<h2 id="文章的cover显示404"><a href="#文章的cover显示404" class="headerlink" title="文章的cover显示404"></a>文章的cover显示404</h2><h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h3><p>文章的cover显示404，当然本地也显示404图片</p>
+<h3 id="解决方法-1"><a href="#解决方法-1" class="headerlink" title="解决方法"></a>解决方法</h3><p>看看图片的链接是不是写错了</p>
+]]></content>
       <categories>
-          
-          <category> 博客搭建 </category>
-          
-          <category> 教程 </category>
-          
+        <category>butterfly</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> butterfly </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>关于NERF</title>
-      <link href="/2024/04/18/%E5%85%B3%E4%BA%8ENERF/"/>
-      <url>/2024/04/18/%E5%85%B3%E4%BA%8ENERF/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>butterfly图片部署在gitpage不显示</title>
-      <link href="/2024/04/18/butterfly%E5%9B%BE%E7%89%87%E9%83%A8%E7%BD%B2%E5%9C%A8gitpage%E4%B8%8D%E6%98%BE%E7%A4%BA/"/>
-      <url>/2024/04/18/butterfly%E5%9B%BE%E7%89%87%E9%83%A8%E7%BD%B2%E5%9C%A8gitpage%E4%B8%8D%E6%98%BE%E7%A4%BA/</url>
-      
-        <content type="html"><![CDATA[<h1 id="butterfly图片部署在gitpage不显示"><a href="#butterfly图片部署在gitpage不显示" class="headerlink" title="butterfly图片部署在gitpage不显示"></a>butterfly图片部署在gitpage不显示</h1><h2 id="topimg等banner不显示"><a href="#topimg等banner不显示" class="headerlink" title="topimg等banner不显示"></a>topimg等banner不显示</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>在butterfly中的<code>_config.butterfly.yml</code>中的图片设置插入图片，图片在本地显示正常，部署到gitpage后图片不显示。</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">index_img:</span> <span class="string">img/xxx.jpg</span></span><br></pre></td></tr></table></figure><h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>在图片地址前加上<code>你的网址</code>，即<code>https://xxxx.github.io/</code>。</p><h2 id="文章的cover显示404"><a href="#文章的cover显示404" class="headerlink" title="文章的cover显示404"></a>文章的cover显示404</h2><h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h3><p>文章的cover显示404，当然本地也显示404图片</p><h3 id="解决方法-1"><a href="#解决方法-1" class="headerlink" title="解决方法"></a>解决方法</h3><p>看看图片的链接是不是写错了</p>]]></content>
-      
-      
+      <tags>
+        <tag>butterfly</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>butterfly建立gitalk</title>
+    <url>/2024/04/18/butterfly%E5%BB%BA%E7%AB%8Bgitalk/</url>
+    <content><![CDATA[<h3 id="创建-OAuth-Application"><a href="#创建-OAuth-Application" class="headerlink" title="创建 OAuth Application"></a>创建 OAuth Application</h3><p><code>创建 OAuth Application</code> 的过程所有 hexo 主题都是通用的，后面的配置文件主题之间有所差异。</p>
+<p>首先，先跳转到 OAuth Apps 的创建界面。<br>具体路径是 <code>Settings</code>-<code>Developer settings</code>-<code>OAuth Apps</code>。<br><a href="butterfly%E5%BB%BA%E7%AB%8Bgitalk/1.png">1</a></p>
+<p><a href="butterfly%E5%BB%BA%E7%AB%8Bgitalk/2.png">2</a></p>
+<p><a href="butterfly%E5%BB%BA%E7%AB%8Bgitalk/3.png">3</a></p>
+<h3 id="点击-Register-a-new-application，创建一个新的-OAuth-Application。"><a href="#点击-Register-a-new-application，创建一个新的-OAuth-Application。" class="headerlink" title="点击 Register a new application，创建一个新的 OAuth Application。"></a>点击 Register a new application，创建一个新的 OAuth Application。</h3><p><a href="butterfly%E5%BB%BA%E7%AB%8Bgitalk/4.png">4</a><br>以下是对这些字段的说明</p>
+<table>
+<thead>
+<tr>
+<th>表单字段</th>
+<th></th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Application name</td>
+<td>必填</td>
+<td>应用名字，随便填</td>
+</tr>
+<tr>
+<td>Homepage URL</td>
+<td>必填</td>
+<td>填写你的博客首页地址</td>
+</tr>
+<tr>
+<td>Application description</td>
+<td>选填</td>
+<td>应用描述，随便填</td>
+</tr>
+<tr>
+<td>Authorization callback URL</td>
+<td>必填</td>
+<td>登录 Github 账号后，要跳转回去，这个地址就是跳转回去的地址</td>
+</tr>
+</tbody></table>
+<p><a href="butterfly%E5%BB%BA%E7%AB%8Bgitalk/5.png">5</a><br>填写完之后，会显示这样一个界面，其中 <code>Client ID</code> 和 <code>Client Secret</code> 很重要，待会要用，这里我防止自己的应用被滥用，就先打码了。</p>
+<h3 id="修改-butterfly-配置文件"><a href="#修改-butterfly-配置文件" class="headerlink" title="修改 butterfly 配置文件"></a>修改 butterfly 配置文件</h3><p><strong>之前的步骤所有的 Gittalk 配置都是一样的，接下来的配置只针对 <a href="https://github.com/jerryc127/hexo-theme-butterfly">butterfly</a> 主题，主题与主题之间可能有些不一样。</strong></p>
+<p>打开 <code>_data/butterfly.yml</code>，找到 gittalk 的配置项。<br>把之前获取 <code>Client ID</code> 和 <code>Client Secret</code> 分别填到 <code>client_id</code> 和 <code>client_secret</code> 里面。</p>
+<p>repo 填一个仓库名就好了，我这里填的就是 io 的仓库。当然，你也可以去新建一个。</p>
+<p>owner 填自己的 github 账号名。</p>
+<p>admin 填 repo 仓库的拥有者，hexo 解析的时候会使用 <code>admin/repo</code> 去定位仓库的位置。</p>
+<blockquote>
+<p>比较容易犯错的地方是 repo 填了 <code>nonlinearthink/nonlinearthink.github.io</code> 这样的名字，注意，repo 只需要填仓库名字，不需要加拥有者，拥有者放到 admin 里面。</p>
+</blockquote>
+<p><strong>关于其他的字段解释可见<a href="https://demo.jerryc.me/posts/ceeb73f/#%E8%A9%95%E8%AB%96">官方博客</a></strong></p>
+<h3 id="更新、发布"><a href="#更新、发布" class="headerlink" title="更新、发布"></a>更新、发布</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo g </span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<h2 id="gitalk踩坑之error-not-found"><a href="#gitalk踩坑之error-not-found" class="headerlink" title="gitalk踩坑之error not found"></a>gitalk踩坑之error not found</h2><p>出现error not found的问题，一般来说就是GitHub仓库的链接出现了问题，笔者部署的时候就出现了这个问题，死活不知道那里配置有误。最后，笔者明察秋毫，发现竟然是我的仓库设置了private，没有公开。最后，新建public的仓库之后，问题迎刃而解，希望我踩的坑能够给大家一点启发。</p>
+]]></content>
       <categories>
-          
-          <category> butterfly </category>
-          
+        <category>博客搭建</category>
+        <category>教程</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> butterfly </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>关于安装butterfly的注意事项</title>
-      <link href="/2024/04/17/%E5%85%B3%E4%BA%8E%E5%AE%89%E8%A3%85butterfly%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/"/>
-      <url>/2024/04/17/%E5%85%B3%E4%BA%8E%E5%AE%89%E8%A3%85butterfly%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</url>
-      
-        <content type="html"><![CDATA[<h2 id="关于配置文件的问题"><a href="#关于配置文件的问题" class="headerlink" title="关于配置文件的问题"></a>关于配置文件的问题</h2><h3 id="第一点"><a href="#第一点" class="headerlink" title="第一点"></a>第一点</h3><blockquote><p>_config.butterfly.yml 是复制来自 butterfly 主题中的</p></blockquote><h3 id="第二点-就是部署的问题"><a href="#第二点-就是部署的问题" class="headerlink" title="第二点 就是部署的问题"></a>第二点 就是部署的问题</h3><blockquote><p>关于使用官方所说的一键部署的时候 </p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d </span><br></pre></td></tr></table></figure><p>会出现 </p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nothing to commit</span><br></pre></td></tr></table></figure><p>这个时候需要运行</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo cl</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></blockquote><h3 id="关于美化的问题"><a href="#关于美化的问题" class="headerlink" title="关于美化的问题"></a>关于美化的问题</h3><blockquote><p>首先美化应该一步一步来<br>如果你太执着于美化，那么你选择<strong>hexo</strong>的目的就错了<br>显然我们选择<strong>hexo</strong>的目的就是快速搭建一个博客<br>花费过多时间在美化上不太好，应该专注于写博客<br>所以我建议你先将博客搭建起来，然后慢慢去美化<br>有几个决定页面大表象的要更改</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">index_img:</span></span><br></pre></td></tr></table></figure><p><strong>_config.yml</strong> 按照hexo的文档改好之后<br>至于butterfly主题的配置文件不需要完全更改</p></blockquote>]]></content>
-      
-      
+      <tags>
+        <tag>butterfly</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于认真遵循文档</title>
+    <url>/2024/04/17/%E5%85%B3%E4%BA%8E%E8%AE%A4%E7%9C%9F%E9%81%B5%E5%BE%AA%E6%96%87%E6%A1%A3/</url>
+    <content><![CDATA[<h1 id="认真读文档即使是你熟知的领域"><a href="#认真读文档即使是你熟知的领域" class="headerlink" title="认真读文档即使是你熟知的领域"></a>认真读文档即使是你熟知的领域</h1><blockquote>
+<p>当我们在这个领域有所了解时，我们看文档就会习惯性的跳过去观看<br>但是这就会导致我们安装出错，安装程序也是如同写代码一般<br>在安装之后，再去排查错误是找不到的</p>
+</blockquote>
+]]></content>
       <categories>
-          
-          <category> butterfly </category>
-          
+        <category>杂项</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> butterfly </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>关于认真遵循文档</title>
-      <link href="/2024/04/17/%E5%85%B3%E4%BA%8E%E8%AE%A4%E7%9C%9F%E9%81%B5%E5%BE%AA%E6%96%87%E6%A1%A3/"/>
-      <url>/2024/04/17/%E5%85%B3%E4%BA%8E%E8%AE%A4%E7%9C%9F%E9%81%B5%E5%BE%AA%E6%96%87%E6%A1%A3/</url>
-      
-        <content type="html"><![CDATA[<h1 id="认真读文档即使是你熟知的领域"><a href="#认真读文档即使是你熟知的领域" class="headerlink" title="认真读文档即使是你熟知的领域"></a>认真读文档即使是你熟知的领域</h1><blockquote><p>当我们在这个领域有所了解时，我们看文档就会习惯性的跳过去观看<br>但是这就会导致我们安装出错，安装程序也是如同写代码一般<br>在安装之后，再去排查错误是找不到的</p></blockquote>]]></content>
-      
-      
+      <tags>
+        <tag>杂项</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于NERF</title>
+    <url>/2024/04/18/%E5%85%B3%E4%BA%8ENERF/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>关于安装butterfly的注意事项</title>
+    <url>/2024/04/17/%E5%85%B3%E4%BA%8E%E5%AE%89%E8%A3%85butterfly%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</url>
+    <content><![CDATA[<h2 id="关于配置文件的问题"><a href="#关于配置文件的问题" class="headerlink" title="关于配置文件的问题"></a>关于配置文件的问题</h2><h3 id="第一点"><a href="#第一点" class="headerlink" title="第一点"></a>第一点</h3><blockquote>
+<p>_config.butterfly.yml 是复制来自 butterfly 主题中的</p>
+</blockquote>
+<h3 id="第二点-就是部署的问题"><a href="#第二点-就是部署的问题" class="headerlink" title="第二点 就是部署的问题"></a>第二点 就是部署的问题</h3><blockquote>
+<p>关于使用官方所说的一键部署的时候 </p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo d </span><br></pre></td></tr></table></figure>
+
+<p>会出现 </p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">nothing to commit</span><br></pre></td></tr></table></figure>
+
+<p>这个时候需要运行</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo cl</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="关于美化的问题"><a href="#关于美化的问题" class="headerlink" title="关于美化的问题"></a>关于美化的问题</h3><blockquote>
+<p>首先美化应该一步一步来<br>如果你太执着于美化，那么你选择<strong>hexo</strong>的目的就错了<br>显然我们选择<strong>hexo</strong>的目的就是快速搭建一个博客<br>花费过多时间在美化上不太好，应该专注于写博客<br>所以我建议你先将博客搭建起来，然后慢慢去美化<br>有几个决定页面大表象的要更改</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">index_img:</span></span><br></pre></td></tr></table></figure>
+<p><strong>_config.yml</strong> 按照hexo的文档改好之后<br>至于butterfly主题的配置文件不需要完全更改</p>
+</blockquote>
+]]></content>
       <categories>
-          
-          <category> 杂项 </category>
-          
+        <category>butterfly</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 杂项 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-  
-  
+      <tags>
+        <tag>butterfly</tag>
+      </tags>
+  </entry>
 </search>
