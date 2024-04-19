@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Ranni Snow</title>
   <icon>https://angleyanalbedo.github.io/icon.png</icon>
-  
+  <subtitle>Sicence AND TECH</subtitle>
   <link href="https://angleyanalbedo.github.io/atom.xml" rel="self"/>
   
   <link href="https://angleyanalbedo.github.io/"/>
-  <updated>2024-04-19T09:25:12.818Z</updated>
+  <updated>2024-04-19T14:37:18.281Z</updated>
   <id>https://angleyanalbedo.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于hexo中文章图片无法正常显示</title>
+    <link href="https://angleyanalbedo.github.io/2024/04/19/%E5%85%B3%E4%BA%8Ehexo%E4%B8%AD%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E6%98%BE%E7%A4%BA/"/>
+    <id>https://angleyanalbedo.github.io/2024/04/19/%E5%85%B3%E4%BA%8Ehexo%E4%B8%AD%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E6%98%BE%E7%A4%BA/</id>
+    <published>2024-04-19T14:26:14.000Z</published>
+    <updated>2024-04-19T14:37:18.281Z</updated>
+    
+    
+    
+    
+    <category term="教程" scheme="https://angleyanalbedo.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="博客搭建" scheme="https://angleyanalbedo.github.io/categories/%E6%95%99%E7%A8%8B/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    
+    
+    <category term="butterfly" scheme="https://angleyanalbedo.github.io/tags/butterfly/"/>
+    
+  </entry>
   
   <entry>
     <title>关于扩散模型</title>
@@ -61,7 +80,7 @@
     <link href="https://angleyanalbedo.github.io/2024/04/18/hexo%E6%B7%BB%E5%8A%A0rss/"/>
     <id>https://angleyanalbedo.github.io/2024/04/18/hexo%E6%B7%BB%E5%8A%A0rss/</id>
     <published>2024-04-18T13:12:08.000Z</published>
-    <updated>2024-04-19T09:20:40.038Z</updated>
+    <updated>2024-04-19T14:08:41.102Z</updated>
     
     
       
@@ -90,7 +109,7 @@
     <link href="https://angleyanalbedo.github.io/2024/04/18/%E5%85%B3%E4%BA%8E%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E4%B8%8E%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84/"/>
     <id>https://angleyanalbedo.github.io/2024/04/18/%E5%85%B3%E4%BA%8E%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E4%B8%8E%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84/</id>
     <published>2024-04-18T11:54:21.000Z</published>
-    <updated>2024-04-19T09:20:40.044Z</updated>
+    <updated>2024-04-19T14:10:07.400Z</updated>
     
     
       
@@ -116,7 +135,7 @@
     <link href="https://angleyanalbedo.github.io/2024/04/18/butterfly%E5%BB%BA%E7%AB%8Bgitalk/"/>
     <id>https://angleyanalbedo.github.io/2024/04/18/butterfly%E5%BB%BA%E7%AB%8Bgitalk/</id>
     <published>2024-04-18T10:58:43.000Z</published>
-    <updated>2024-04-19T09:26:07.263Z</updated>
+    <updated>2024-04-19T14:09:12.071Z</updated>
     
     
       
