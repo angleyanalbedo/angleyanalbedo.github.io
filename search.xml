@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>butterfly图片部署在gitpage不显示</title>
+    <url>/2024/04/18/butterfly%E5%9B%BE%E7%89%87%E9%83%A8%E7%BD%B2%E5%9C%A8gitpage%E4%B8%8D%E6%98%BE%E7%A4%BA/</url>
+    <content><![CDATA[<h1 id="butterfly图片部署在gitpage不显示"><a href="#butterfly图片部署在gitpage不显示" class="headerlink" title="butterfly图片部署在gitpage不显示"></a>butterfly图片部署在gitpage不显示</h1><h2 id="topimg等banner不显示"><a href="#topimg等banner不显示" class="headerlink" title="topimg等banner不显示"></a>topimg等banner不显示</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>在butterfly中的<code>_config.butterfly.yml</code>中的图片设置插入图片，图片在本地显示正常，部署到gitpage后图片不显示。</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">index_img:</span> <span class="string">img/xxx.jpg</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>在图片地址前加上<code>你的网址</code>，即<code>https://xxxx.github.io/</code>。<br>还有可能是你需要使用绝对路径，即<code>/img/xxx.jpg</code>而不是 <code>img/xxx.jpg</code></p>
+<h2 id="文章的cover显示404"><a href="#文章的cover显示404" class="headerlink" title="文章的cover显示404"></a>文章的cover显示404</h2><h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h3><p>文章的cover显示404，当然本地也显示404图片</p>
+<h3 id="解决方法-1"><a href="#解决方法-1" class="headerlink" title="解决方法"></a>解决方法</h3><p>看看图片的链接是不是写错了</p>
+]]></content>
+      <categories>
+        <category>butterfly</category>
+      </categories>
+      <tags>
+        <tag>butterfly</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo添加rss</title>
+    <url>/2024/04/18/hexo%E6%B7%BB%E5%8A%A0rss/</url>
+    <content><![CDATA[<h2 id="插件选择"><a href="#插件选择" class="headerlink" title="插件选择"></a>插件选择</h2><p>根据 butterfly 主题的进阶教程里插件推荐，可以使用 <a href="https://github.com/hexojs/hexo-generator-feed">hexo-generator-feed</a> 插件进行 RSS feed 的制作。</p>
+<p><img src="/1.png"></p>
+<p>于是根据 <a href="https://github.com/hexojs/hexo-generator-feed">hexo-generator-feed</a> 的官方教程，一步步进行插件配置。</p>
+<h2 id="hexo-根目录安装插件并配置"><a href="#hexo-根目录安装插件并配置" class="headerlink" title="hexo 根目录安装插件并配置"></a>hexo 根目录安装插件并配置</h2><ol>
+<li>进入 hexo 的根目录，执行如下命令进行插件安装<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-feed --save</span><br></pre></td></tr></table></figure></li>
+<li>根据官方建议配置 hexo 根目录的_config.yml 文件，再_config.yml 文件末尾添加如下配置信息</li>
+</ol>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">feed:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span> <span class="comment">#是否启用插件</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">atom</span> <span class="comment">#有atom和rss2两个选项，使用默认atom就好了</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">atom.xml</span> <span class="comment">#也用默认配置atom.xml就行</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">20</span> <span class="comment">#展示文章的数量,使用 0 或 false 代表展示全部</span></span><br><span class="line">  <span class="attr">hub:</span> <span class="comment">#这个我没用上，根据官网，空着就行</span></span><br><span class="line">  <span class="attr">content:</span> <span class="comment">#默认是false，true的话会在rss文件中包含整个文章内容</span></span><br><span class="line">  <span class="attr">content_limit:</span> <span class="number">140</span> <span class="comment">#摘要长度</span></span><br><span class="line">  <span class="attr">content_limit_delim:</span> <span class="string">&#x27; &#x27;</span> <span class="comment">#没看明白官方的意思，就跟着默认不填了</span></span><br><span class="line">  <span class="attr">order_by:</span> <span class="string">-date</span> <span class="comment">#采用日期进行排序</span></span><br><span class="line">  <span class="attr">icon:</span> <span class="string">icon.png</span> <span class="comment">#给rss链接配置icon</span></span><br><span class="line">  <span class="attr">autodiscovery:</span> <span class="literal">true</span> <span class="comment">#自动发现提要</span></span><br><span class="line">  <span class="attr">template:</span> <span class="comment">#给rss文章配置模板</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="主题目录配置文件"><a href="#主题目录配置文件" class="headerlink" title="主题目录配置文件"></a>主题目录配置文件</h2><ol>
+<li><p>在 butterfly 主题目录下的_config.yml 文件内添加配置内容：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">rss:</span> <span class="string">/atom.xml</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在_config.yml 文件中找到 social settings 项，添加如下内容。（这样主页就能正确显示 RSS 图标了）</p>
+</li>
+</ol>
+  <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">fas fa-rss:</span> <span class="string">https://你的域名地址/atom.xml</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="大功告成"><a href="#大功告成" class="headerlink" title="大功告成"></a>大功告成</h2><p>bash</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>教程</category>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>rss</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>butterfly建立gitalk</title>
+    <url>/2024/04/18/butterfly%E5%BB%BA%E7%AB%8Bgitalk/</url>
+    <content><![CDATA[<h3 id="创建-OAuth-Application"><a href="#创建-OAuth-Application" class="headerlink" title="创建 OAuth Application"></a>创建 OAuth Application</h3><p><code>创建 OAuth Application</code> 的过程所有 hexo 主题都是通用的，后面的配置文件主题之间有所差异。</p>
+<p>首先，先跳转到 OAuth Apps 的创建界面。<br>具体路径是 <code>Settings</code>-<code>Developer settings</code>-<code>OAuth Apps</code>。<br><img src="/img/butterfly%E5%BB%BA%E7%AB%8Bgitalk/1.png"></p>
+<p><img src="/img/butterfly%E5%BB%BA%E7%AB%8Bgitalk/2.png"></p>
+<p><img src="/img/butterfly%E5%BB%BA%E7%AB%8Bgitalk/3.png"></p>
+<h3 id="点击-Register-a-new-application，创建一个新的-OAuth-Application。"><a href="#点击-Register-a-new-application，创建一个新的-OAuth-Application。" class="headerlink" title="点击 Register a new application，创建一个新的 OAuth Application。"></a>点击 Register a new application，创建一个新的 OAuth Application。</h3><p><img src="/img/butterfly%E5%BB%BA%E7%AB%8Bgitalk/4.png"><br>以下是对这些字段的说明</p>
+<table>
+<thead>
+<tr>
+<th>表单字段</th>
+<th></th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Application name</td>
+<td>必填</td>
+<td>应用名字，随便填</td>
+</tr>
+<tr>
+<td>Homepage URL</td>
+<td>必填</td>
+<td>填写你的博客首页地址</td>
+</tr>
+<tr>
+<td>Application description</td>
+<td>选填</td>
+<td>应用描述，随便填</td>
+</tr>
+<tr>
+<td>Authorization callback URL</td>
+<td>必填</td>
+<td>登录 Github 账号后，要跳转回去，这个地址就是跳转回去的地址</td>
+</tr>
+</tbody></table>
+<p><img src="/img/butterfly%E5%BB%BA%E7%AB%8Bgitalk/5.png"><br>填写完之后，会显示这样一个界面，其中 <code>Client ID</code> 和 <code>Client Secret</code> 很重要，待会要用，这里我防止自己的应用被滥用，就先打码了。</p>
+<h3 id="修改-butterfly-配置文件"><a href="#修改-butterfly-配置文件" class="headerlink" title="修改 butterfly 配置文件"></a>修改 butterfly 配置文件</h3><p><strong>之前的步骤所有的 Gittalk 配置都是一样的，接下来的配置只针对 <a href="https://github.com/jerryc127/hexo-theme-butterfly">butterfly</a> 主题，主题与主题之间可能有些不一样。</strong></p>
+<p>打开 <code>_data/butterfly.yml</code>，找到 gittalk 的配置项。<br>把之前获取 <code>Client ID</code> 和 <code>Client Secret</code> 分别填到 <code>client_id</code> 和 <code>client_secret</code> 里面。</p>
+<p>repo 填一个仓库名就好了，我这里填的就是 io 的仓库。当然，你也可以去新建一个。</p>
+<p>owner 填自己的 github 账号名。</p>
+<p>admin 填 repo 仓库的拥有者，hexo 解析的时候会使用 <code>admin/repo</code> 去定位仓库的位置。</p>
+<blockquote>
+<p>比较容易犯错的地方是 repo 填了 <code>nonlinearthink/nonlinearthink.github.io</code> 这样的名字，注意，repo 只需要填仓库名字，不需要加拥有者，拥有者放到 admin 里面。</p>
+</blockquote>
+<p><strong>关于其他的字段解释可见<a href="https://demo.jerryc.me/posts/ceeb73f/#%E8%A9%95%E8%AB%96">官方博客</a></strong></p>
+<h3 id="更新、发布"><a href="#更新、发布" class="headerlink" title="更新、发布"></a>更新、发布</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo g </span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<h2 id="gitalk踩坑之error-not-found"><a href="#gitalk踩坑之error-not-found" class="headerlink" title="gitalk踩坑之error not found"></a>gitalk踩坑之error not found</h2><p>出现error not found的问题，一般来说就是GitHub仓库的链接出现了问题，笔者部署的时候就出现了这个问题，死活不知道那里配置有误。最后，笔者明察秋毫，发现竟然是我的仓库设置了private，没有公开。最后，新建public的仓库之后，问题迎刃而解，希望我踩的坑能够给大家一点启发。</p>
+]]></content>
+      <categories>
+        <category>教程</category>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>butterfly</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于butterfly的路径</title>
+    <url>/2024/04/19/%E5%85%B3%E4%BA%8Ebutterfly%E7%9A%84%E8%B7%AF%E5%BE%84/</url>
+    <content><![CDATA[<h3 id="在使用butterfly配置文件和在markdown编写时我们都会遇到引用资源的问题"><a href="#在使用butterfly配置文件和在markdown编写时我们都会遇到引用资源的问题" class="headerlink" title="在使用butterfly配置文件和在markdown编写时我们都会遇到引用资源的问题"></a>在使用butterfly配置文件和在markdown编写时我们都会遇到引用资源的问题</h3><blockquote>
+<p>最简单的方法是使用网址引用，不需要考虑各种相对地址</p>
+</blockquote>
+<h3 id="在markdown中一般我们使用使用-Markdown-嵌入图片"><a href="#在markdown中一般我们使用使用-Markdown-嵌入图片" class="headerlink" title="在markdown中一般我们使用使用 Markdown 嵌入图片"></a>在markdown中一般我们使用使用 Markdown 嵌入图片</h3><blockquote>
+<p>我们只需要启动选项</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">marked:</span></span><br><span class="line">  <span class="attr">prependRoot:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">postAsset:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>启用后，资源图片将会被自动解析为其对应文章的路径。<br>例如： <code>image.jpg</code> 位置为 <code>/2020/01/02/foo/image.jpg</code> ，这表示它是 <code>/2020/01/02/foo/</code> 文章的一张资源图片， <code>![](image.jpg)</code> 将会被解析为 <code>&lt;img src=&quot;/2020/01/02/foo/image.jpg&quot;&gt;</code> 。</p>
+</blockquote>
+<ul>
+<li>所以注意的是这个是相对与文章路径的地址，每一个文章都会生成<code>文章名/index.html</code></li>
+</ul>
+<blockquote>
+<h2 id="全局资源文件夹"><a href="#全局资源文件夹" class="headerlink" title="全局资源文件夹"></a>全局资源文件夹</h2><p>资源（Asset）代表 <code>source</code> 文件夹中除了文章以外的所有文件，例如图片、CSS、JS 文件等。比方说，如果你的Hexo项目中只有少量图片，那最简单的方法就是将它们放在 <code>source/images</code> 文件夹中。然后通过类似于 <code>![](/images/image.jpg)</code> 的方法访问它们。</p>
+<h2 id="文章资源文件夹"><a href="#文章资源文件夹" class="headerlink" title="文章资源文件夹"></a>文章资源文件夹</h2><p>对于那些想要更有规律地提供图片和其他资源以及想要将他们的资源分布在各个文章上的人来说，Hexo也提供了更组织化的方式来管理资源。这个稍微有些复杂但是管理资源非常方便的功能可以通过将 <code>config.yml</code> 文件中的 <code>post_asset_folder</code> 选项设为 <code>true</code> 来打开。</p>
+<p>_config.yml</p>
+<table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></tbody></table>
+
+<p>当资源文件管理功能打开后，Hexo将会在你每一次通过 <code>hexo new [layout] &lt;title&gt;</code> 命令创建新文章时自动创建一个文件夹。这个资源文件夹将会有与这个文章文件一样的名字。将所有与你的文章有关的资源放在这个关联文件夹中之后，你可以通过相对路径来引用它们，这样你就得到了一个更简单而且方便得多的工作流。</p>
+</blockquote>
+<h3 id="在butterfly配置文件中的引用"><a href="#在butterfly配置文件中的引用" class="headerlink" title="在butterfly配置文件中的引用"></a>在butterfly配置文件中的引用</h3><ol>
+<li><p>当然可以使用网址，简单</p>
+</li>
+<li><p>在<code>background</code>的设置中这个这个需要使用<code>url()</code>来引用图像</p>
+</li>
+<li><p>在普通的<code>index_img</code> 等引用的方面 还是如同全局资源的引用方式</p>
+</li>
+</ol>
+<p>还有需要注意的是除了<code>background</code> 可以使用<code>url()</code> 其他的使用会出现问题</p>
+]]></content>
+      <categories>
+        <category>教程</category>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>butterfly</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于安装butterfly的注意事项</title>
+    <url>/2024/04/17/%E5%85%B3%E4%BA%8E%E5%AE%89%E8%A3%85butterfly%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</url>
+    <content><![CDATA[<h2 id="关于配置文件的问题"><a href="#关于配置文件的问题" class="headerlink" title="关于配置文件的问题"></a>关于配置文件的问题</h2><h3 id="第一点"><a href="#第一点" class="headerlink" title="第一点"></a>第一点</h3><blockquote>
+<p>_config.butterfly.yml 是复制来自 butterfly 主题中的</p>
+</blockquote>
+<h3 id="第二点-就是部署的问题"><a href="#第二点-就是部署的问题" class="headerlink" title="第二点 就是部署的问题"></a>第二点 就是部署的问题</h3><blockquote>
+<p>关于使用官方所说的一键部署的时候 </p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo d </span><br></pre></td></tr></table></figure>
+
+<p>会出现 </p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">nothing to commit</span><br></pre></td></tr></table></figure>
+
+<p>这个时候需要运行</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo cl</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="关于美化的问题"><a href="#关于美化的问题" class="headerlink" title="关于美化的问题"></a>关于美化的问题</h3><blockquote>
+<p>首先美化应该一步一步来<br>如果你太执着于美化，那么你选择<strong>hexo</strong>的目的就错了<br>显然我们选择<strong>hexo</strong>的目的就是快速搭建一个博客<br>花费过多时间在美化上不太好，应该专注于写博客<br>所以我建议你先将博客搭建起来，然后慢慢去美化<br>有几个决定页面大表象的要更改</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">index_img:</span></span><br></pre></td></tr></table></figure>
+<p><strong>_config.yml</strong> 按照hexo的文档改好之后<br>至于butterfly主题的配置文件不需要完全更改</p>
+</blockquote>
+<h3 id="pjax会出现问题"><a href="#pjax会出现问题" class="headerlink" title="pjax会出现问题"></a>pjax会出现问题</h3><blockquote>
+<p>会使导航栏的定位失效发生无效ajax请求</p>
+</blockquote>
+<h3 id="运行服务器时"><a href="#运行服务器时" class="headerlink" title="运行服务器时"></a>运行服务器时</h3><blockquote>
+<p><code>hexo server -s</code> 静态模式下与部署环境不同会出现问题</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>butterfly</category>
+      </categories>
+      <tags>
+        <tag>butterfly</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于NERF</title>
+    <url>/2024/04/18/%E5%85%B3%E4%BA%8ENERF/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>nerf</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于认真遵循文档</title>
+    <url>/2024/04/17/%E5%85%B3%E4%BA%8E%E8%AE%A4%E7%9C%9F%E9%81%B5%E5%BE%AA%E6%96%87%E6%A1%A3/</url>
+    <content><![CDATA[<h1 id="认真读文档即使是你熟知的领域"><a href="#认真读文档即使是你熟知的领域" class="headerlink" title="认真读文档即使是你熟知的领域"></a>认真读文档即使是你熟知的领域</h1><blockquote>
+<p>当我们在这个领域有所了解时，我们看文档就会习惯性的跳过去观看<br>但是这就会导致我们安装出错，安装程序也是如同写代码一般<br>在安装之后，再去排查错误是找不到的</p>
+</blockquote>
+<h3 id="不要随意的更改配置除非你清楚你在干什么"><a href="#不要随意的更改配置除非你清楚你在干什么" class="headerlink" title="不要随意的更改配置除非你清楚你在干什么"></a>不要随意的更改配置除非你清楚你在干什么</h3><blockquote>
+<p>比如我在配置butterfly是</p>
+<p>我将<code>_config.yml</code></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">filename_case:</span> <span class="number">0</span></span><br><span class="line"><span class="attr">render_drafts:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">relative_link:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">future:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p><code>relative_link</code> 设置成<code>true</code>我以为没什么影响实际上这对于导航栏造成问题浪费了巨大时间</p>
+<p>我还以为是<code>pjax</code>的影响</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>杂项</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于绝对路径与相对路径</title>
+    <url>/2024/04/18/%E5%85%B3%E4%BA%8E%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E4%B8%8E%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84/</url>
+    <content><![CDATA[<p>我们以语言为分类总结一下。<br>记住所以的路径最终一般解析为文件系统路径</p>
+<h1 id="java"><a href="#java" class="headerlink" title="java"></a>java</h1><h2 id="一、Linux和Windows路径分隔符"><a href="#一、Linux和Windows路径分隔符" class="headerlink" title="一、Linux和Windows路径分隔符"></a>一、Linux和Windows路径分隔符</h2><p>Linux下：”&#x2F;”</p>
+<p>Window下：”\\”</p>
+<p>Java中通用：System.getProperty(“file.separator”);</p>
+<h2 id="二、相对路径"><a href="#二、相对路径" class="headerlink" title="二、相对路径"></a>二、相对路径</h2><p>一般有两种写法<code>file\</code> 和<code>./file</code></p>
+<h3 id="2-1-相对路径的概念"><a href="#2-1-相对路径的概念" class="headerlink" title="2.1 相对路径的概念"></a>2.1 相对路径的概念</h3><p>相对路径指的是相对JVM的启动路径。</p>
+<p>举个例子：假设有一java源文件Example.java在d盘根目录下。我们进入命令行窗口，进入到d盘根目录下，然后用“javac Example.java”来编译此文件，编译无错后，会在d盘根目录下自动生成”Example.class”文件。我们再调用”java Example”来运行该程。此时我们已经启动了一个jvm，这个jvm是在d盘根目录下被启动的，所以此jvm所加载的程序中File类的相对路径也就是相对这个路径的，即d盘根目录D:\。</p>
+<p>搞清了这些，我们可以使用相对路径来创建文件，例如:</p>
+<p>File file &#x3D; new File(“a.tx”);</p>
+<p>file.createNewFile();</p>
+<p>假设jvm是在”D:\”下启动的，那么a.txt就会生成在D:\a.txt;</p>
+<h3 id="2-2-如何通过文件路径创建文件对象"><a href="#2-2-如何通过文件路径创建文件对象" class="headerlink" title="2.2 如何通过文件路径创建文件对象"></a>2.2 如何通过文件路径创建文件对象</h3><p>下面的ResourceTest项目中有4个文件，1.properties、2.properties、3.properties、4.properties。</p>
+<p>当我们需要使用这4个文件的时候，怎样创建文件对象呢？</p>
+<p><img src="/1.png">  </p>
+<p>编译后，4个文件的路径如下：</p>
+<p>ResourceTest&#x2F;1.properties                     <br>ResourceTest&#x2F;bin\2.properties                 <br>ResourceTest&#x2F;bin\com\ghs\test\3.properties    <br>ResourceTest&#x2F;bin\com\ghs\test\sub\4.properties  </p>
+<p>前面我们说过，JAVA中文件路径是相对JVM的启动路径的，对于简单的JAVA项目，其JVM是在项目名称下启动的，所以，ResourceTest中4个文件的相对路径分别是：</p>
+<p>.&#x2F;1.properties   或者1.properties                  <br>.&#x2F;bin\2.properties  或者  bin\2.properties               <br>.&#x2F;bin\com\ghs\test\3.properties   或者bin\com\ghs\test\3.properties <br>.&#x2F;bin\com\ghs\test\sub\4.properties  或者 bin\com\ghs\test\sub\4.properties  </p>
+<p>附：“.”或”.\”代表当前目录，这个目录也就是jvm启动路径。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MainTest</span> &#123;</span><br><span class="line"> </span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		</span><br><span class="line">		<span class="type">File</span> <span class="variable">file1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;./1.properties&quot;</span>);</span><br><span class="line">		<span class="comment">//File file1 = new File(&quot;test1.txt&quot;);</span></span><br><span class="line">		</span><br><span class="line">		<span class="type">File</span> <span class="variable">file2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;./bin/2.properties&quot;</span>);</span><br><span class="line">		<span class="comment">//File file2 = new File(&quot;bin/2.properties&quot;);</span></span><br><span class="line">		</span><br><span class="line">		<span class="type">File</span> <span class="variable">file3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;./bin/com/ghs/test/3.properties&quot;</span>);</span><br><span class="line">		<span class="comment">//File file3 = new File(&quot;bin/com/ghs/test/3.properties&quot;);</span></span><br><span class="line"> </span><br><span class="line">		<span class="type">File</span> <span class="variable">file4</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;./bin/com/ghs/test/sub/4.properties&quot;</span>);</span><br><span class="line">		<span class="comment">//File file4 = new File(&quot;bin/com/ghs/test/sub/4.properties&quot;);</span></span><br><span class="line">		</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			System.out.println(file1.exists()+<span class="string">&quot;:&quot;</span>+file1.getCanonicalPath());</span><br><span class="line">			System.out.println(file2.exists()+<span class="string">&quot;:&quot;</span>+file2.getCanonicalPath());</span><br><span class="line">			System.out.println(file3.exists()+<span class="string">&quot;:&quot;</span>+file3.getCanonicalPath());</span><br><span class="line">			System.out.println(file4.exists()+<span class="string">&quot;:&quot;</span>+file4.getCanonicalPath());</span><br><span class="line">		&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>程序运行结果如下：</p>
+<p>true:D:\me\open\open-project\ResourceTest\1.properties<br>true:D:\me\open\open-project\ResourceTest\bin\2.properties<br>true:D:\me\open\open-project\ResourceTest\bin\com\ghs\test\3.properties<br>true:D:\me\open\open-project\ResourceTest\bin\com\ghs\test\sub\4.properties  </p>
+<p>上面创建文件的方式太过于繁琐，所以一般情况下，对于test2.txt和text3.txt的获取，我们倾向于采取下面的方法：</p>
+<p>File file2 &#x3D; new File(Test.class.getResource(“&#x2F;test2.txt”).toURI());</p>
+<p>File file2 &#x3D; new File(Test.class.getResource(“test3.txt”).toURI());</p>
+<p>Tomcat中的情况，如果在tomcat中运行web应用,此时,如果我们在某个类中使用如下代码:</p>
+<p>File f &#x3D; new File(“.”);</p>
+<p>String absolutePath &#x3D; f.getAbsolutePath();</p>
+<p>System.out.println(absolutePath);</p>
+<p>那么输出的将是tomcat下的bin目录.我的机器就D:\work\server\jakarta-tomcat-5.0.28\bin\.，由此可以看出tomcat服务器是在bin目录下启动jvm的，其实是在bin目录下的“catalina.bat”文件中启动jvm的。</p>
+<h3 id="2-3-当前目录和上级目录"><a href="#2-3-当前目录和上级目录" class="headerlink" title="2.3 当前目录和上级目录"></a>2.3 当前目录和上级目录</h3><p>“.”或”.\”代表当前目录，这个目录也就是jvm启动路径。</p>
+<p>下面的代码能得到当前完整目录：</p>
+<p>File f &#x3D; new File(“.”);</p>
+<p>String absolutePath &#x3D; f.getAbsolutePath();</p>
+<p>System.out.println(absolutePath);&#x2F;&#x2F;D:\</p>
+<p>在当前目录下建立文件：File f &#x3D; new File(“.\\test1.txt”);</p>
+<p>“..”代表当前目录的上级目录。</p>
+<p>在上级目录建立文件：File f &#x3D; new File(“..\\..\\test1.txt”);</p>
+<h3 id="三、getPath-、getAbsolutePath-、getCanonicalPath-的区别"><a href="#三、getPath-、getAbsolutePath-、getCanonicalPath-的区别" class="headerlink" title="三、getPath()、getAbsolutePath()、getCanonicalPath()的区别"></a>三、getPath()、getAbsolutePath()、getCanonicalPath()的区别</h3><p>getPath()获取的是新建文件时的路径，例如：</p>
+<p>File file1 &#x3D; new File(“.\\test1.txt”);通过getPath()获取的是.\\test1.txt</p>
+<p>File file &#x3D; new File(“D:\\Text.txt”);通过getPath()获取的是D:\\Text.txt</p>
+<p>getAbsolutePath()获取的是文件的绝对路径，返回当前目录的路径+构造file时候的路径,例如：</p>
+<p>File file1 &#x3D; new File(“.\\test1.txt”);通过getAbsolutePath()获取的是D:\workspace\test\.\test1.txt</p>
+<p>getCanonicalPath()获取的也是文件的绝对路径，而且把..或者.这样的符号解析出来，例如：File file &#x3D; new File(“..\\src</p>
+<p>\\test1.txt”);通过getCanonicalPath()获取的是D:\workspace\src\test1.txt</p>
+<h3 id="四、获取上级目录"><a href="#四、获取上级目录" class="headerlink" title="四、获取上级目录"></a>四、获取上级目录</h3><p>getParent()或者getParentFile();</p>
+<h3 id="五、获取资源的路径"><a href="#五、获取资源的路径" class="headerlink" title="五、获取资源的路径"></a>五、获取资源的路径</h3><p>Java中取资源时，经常用到Class.getResource()和ClassLoader.getResource()，这里来看看他们在取资源文件时候的路径问题。</p>
+<h4 id="1-Class-getResource-String-path"><a href="#1-Class-getResource-String-path" class="headerlink" title="1.Class.getResource(String path)"></a>1.Class.getResource(String path)</h4><p>path  不以’&#x2F;‘开头时，默认是从此类所在的包下取资源；path  以’&#x2F;‘开头时，则是从ClassPath根下获取；</p>
+<p>什么意思呢？看下面这段代码的输出结果就明白了：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> testpackage;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestMain</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(TestMain.class.getResource(<span class="string">&quot;&quot;</span>));</span><br><span class="line">        System.out.println(TestMain.class.getResource(<span class="string">&quot;/&quot;</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<p>file:&#x2F;E:&#x2F;workspace&#x2F;Test&#x2F;bin&#x2F;testpackage&#x2F;</p>
+<p>file:&#x2F;E:&#x2F;workspace&#x2F;Test&#x2F;bin&#x2F;</p>
+<p>上面说到的【path以’&#x2F;‘开头时，则是从ClassPath根下获取】，在这里就是相当于bin目录(Eclipse环境下)。<br><img src="/2.png"><br>如果我们想在TestMain.java中分别取到1~3.properties文件，该怎么写路径呢？代码如下</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> testpackage;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestMain</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// 当前类(class)所在的包目录</span></span><br><span class="line">        System.out.println(TestMain.class.getResource(<span class="string">&quot;&quot;</span>));</span><br><span class="line">        <span class="comment">// class根目录</span></span><br><span class="line">        System.out.println(TestMain.class.getResource(<span class="string">&quot;/&quot;</span>));</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// TestMain.class在&lt;bin&gt;/testpackage包中</span></span><br><span class="line">        <span class="comment">// 2.properties  在&lt;bin&gt;/testpackage包中</span></span><br><span class="line">        System.out.println(TestMain.class.getResource(<span class="string">&quot;2.properties&quot;</span>));</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// TestMain.class在&lt;bin&gt;/testpackage包中</span></span><br><span class="line">        <span class="comment">// 3.properties  在&lt;bin&gt;/testpackage.subpackage包中</span></span><br><span class="line">        System.out.println(TestMain.class.getResource(<span class="string">&quot;subpackage/3.properties&quot;</span>));</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// TestMain.class在&lt;bin&gt;/testpackage包中</span></span><br><span class="line">        <span class="comment">// 1.properties  在bin目录（class根目录）</span></span><br><span class="line">        System.out.println(TestMain.class.getResource(<span class="string">&quot;/1.properties&quot;</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>※Class.getResource和Class.getResourceAsStream在使用时，路径选择上是一样的。  </p>
+<p>2.Class.getClassLoader().getResource(String path)</p>
+<p>path不能以’&#x2F;‘开头时；</p>
+<p>path是从ClassPath根下获取；</p>
+<p>Class.getClassLoader().getResource(String path)</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> testpackage;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestMain</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        TestMain t= <span class="keyword">new</span> <span class="title class_">TestMain</span>();</span><br><span class="line">        System.out.println(t.getClass());</span><br><span class="line">        System.out.println(t.getClass().getClassLoader());</span><br><span class="line">        System.out.println(t.getClass().getClassLoader().getResource(<span class="string">&quot;&quot;</span>));</span><br><span class="line">        System.out.println(t.getClass().getClassLoader().getResource(<span class="string">&quot;/&quot;</span>));<span class="comment">//null</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果：  </p>
+<p>class testpackage.TestMainsun.misc.Launcher$AppClassLoader@1fb8ee3file:&#x2F;E:&#x2F;workspace&#x2F;Test&#x2F;bin&#x2F;</p>
+<p>null</p>
+<p>从结果来看【TestMain.class.getResource(“&#x2F;“) &#x3D;&#x3D; t.getClass().getClassLoader().getResource(“”)】</p>
+<p>上面同样的目录结构，使用Class.getClassLoader（）.getResource(String path)可以这么写：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> testpackage;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestMain</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        TestMain t= <span class="keyword">new</span> <span class="title class_">TestMain</span>();</span><br><span class="line">        System.out.println(t.getClass().getClassLoader().getResource(<span class="string">&quot;&quot;</span>));</span><br><span class="line">        </span><br><span class="line">        System.out.println(t.getClass().getClassLoader().getResource(<span class="string">&quot;1.properties&quot;</span>));</span><br><span class="line">        System.out.println(t.getClass().getClassLoader().getResource(<span class="string">&quot;testpackage/2.properties&quot;</span>));</span><br><span class="line">        System.out.println(t.getClass().getClassLoader().getResource(<span class="string">&quot;testpackage/subpackage/3.properties&quot;</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="python"><a href="#python" class="headerlink" title="python"></a>python</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="built_in">print</span>(os.getcwd())</span><br></pre></td></tr></table></figure>
+
+<p>对于当前目录的写法，有：</p>
+<p>（1）&#x2F; 当前工作目录所在的最顶级目录，即<a href="https://so.csdn.net/so/search?q=%E6%A0%B9%E7%9B%AE%E5%BD%95&spm=1001.2101.3001.7020" title="根目录">根目录</a>，根目录是相对于其他子目录来说的</p>
+<p>（2）.&#x2F; 当前工作目录</p>
+<p>（3）..&#x2F; 当前工作目录上一级目录（当前目录的父级目录）</p>
+<p>为了更好的说明，我们举两个例子。在运行代码前，首先用getcwd（）获取当前工作目录为：C:\Users\86181\PycharmProjects\pythonProject1</p>
+<p>代码1：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> d2l <span class="keyword">import</span> torch <span class="keyword">as</span> d2l</span><br><span class="line"><span class="built_in">print</span>(os.getcwd())</span><br><span class="line">d2l.set_figsize()</span><br><span class="line">img = d2l.plt.imread(<span class="string">&#x27;../img/OIP-C.jpg&#x27;</span>)</span><br><span class="line">d2l.plt.imshow(img)</span><br><span class="line">plt.show()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>此时我的img文件夹应该放在与pythonProject1平级的文件夹内： </p>
+<p><img src="/3.png"></p>
+<p> 代码2：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> d2l <span class="keyword">import</span> torch <span class="keyword">as</span> d2l</span><br><span class="line"><span class="built_in">print</span>(os.getcwd())</span><br><span class="line">d2l.set_figsize()</span><br><span class="line">img = d2l.plt.imread(<span class="string">&#x27;./img/OIP-C.jpg&#x27;</span>)</span><br><span class="line">d2l.plt.imshow(img)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>杂项</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于扩散模型</title>
+    <url>/2024/04/19/%E5%85%B3%E4%BA%8E%E6%89%A9%E6%95%A3%E6%A8%A1%E5%9E%8B/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+</search>
