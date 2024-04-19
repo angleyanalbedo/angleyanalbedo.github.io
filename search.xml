@@ -18,6 +18,38 @@
       </tags>
   </entry>
   <entry>
+    <title>hexo添加rss</title>
+    <url>/2024/04/18/hexo%E6%B7%BB%E5%8A%A0rss/</url>
+    <content><![CDATA[<h2 id="插件选择"><a href="#插件选择" class="headerlink" title="插件选择"></a>插件选择</h2><p>根据 butterfly 主题的进阶教程里插件推荐，可以使用 <a href="https://github.com/hexojs/hexo-generator-feed">hexo-generator-feed</a> 插件进行 RSS feed 的制作。</p>
+<p><img src="1.png"></p>
+<p>于是根据 <a href="https://github.com/hexojs/hexo-generator-feed">hexo-generator-feed</a> 的官方教程，一步步进行插件配置。</p>
+<h2 id="hexo-根目录安装插件并配置"><a href="#hexo-根目录安装插件并配置" class="headerlink" title="hexo 根目录安装插件并配置"></a>hexo 根目录安装插件并配置</h2><ol>
+<li>进入 hexo 的根目录，执行如下命令进行插件安装<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-feed --save</span><br></pre></td></tr></table></figure></li>
+<li>根据官方建议配置 hexo 根目录的_config.yml 文件，再_config.yml 文件末尾添加如下配置信息</li>
+</ol>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">feed:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span> <span class="comment">#是否启用插件</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">atom</span> <span class="comment">#有atom和rss2两个选项，使用默认atom就好了</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">atom.xml</span> <span class="comment">#也用默认配置atom.xml就行</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">20</span> <span class="comment">#展示文章的数量,使用 0 或 false 代表展示全部</span></span><br><span class="line">  <span class="attr">hub:</span> <span class="comment">#这个我没用上，根据官网，空着就行</span></span><br><span class="line">  <span class="attr">content:</span> <span class="comment">#默认是false，true的话会在rss文件中包含整个文章内容</span></span><br><span class="line">  <span class="attr">content_limit:</span> <span class="number">140</span> <span class="comment">#摘要长度</span></span><br><span class="line">  <span class="attr">content_limit_delim:</span> <span class="string">&#x27; &#x27;</span> <span class="comment">#没看明白官方的意思，就跟着默认不填了</span></span><br><span class="line">  <span class="attr">order_by:</span> <span class="string">-date</span> <span class="comment">#采用日期进行排序</span></span><br><span class="line">  <span class="attr">icon:</span> <span class="string">icon.png</span> <span class="comment">#给rss链接配置icon</span></span><br><span class="line">  <span class="attr">autodiscovery:</span> <span class="literal">true</span> <span class="comment">#自动发现提要</span></span><br><span class="line">  <span class="attr">template:</span> <span class="comment">#给rss文章配置模板</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="主题目录配置文件"><a href="#主题目录配置文件" class="headerlink" title="主题目录配置文件"></a>主题目录配置文件</h2><ol>
+<li><p>在 butterfly 主题目录下的_config.yml 文件内添加配置内容：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">rss:</span> <span class="string">/atom.xml</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在_config.yml 文件中找到 social settings 项，添加如下内容。（这样主页就能正确显示 RSS 图标了）</p>
+</li>
+</ol>
+  <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">fas fa-rss:</span> <span class="string">https://你的域名地址/atom.xml</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="大功告成"><a href="#大功告成" class="headerlink" title="大功告成"></a>大功告成</h2><p>bash</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>教程</category>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>rss</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>butterfly建立gitalk</title>
     <url>/2024/04/18/butterfly%E5%BB%BA%E7%AB%8Bgitalk/</url>
     <content><![CDATA[<h3 id="创建-OAuth-Application"><a href="#创建-OAuth-Application" class="headerlink" title="创建 OAuth Application"></a>创建 OAuth Application</h3><p><code>创建 OAuth Application</code> 的过程所有 hexo 主题都是通用的，后面的配置文件主题之间有所差异。</p>
@@ -73,38 +105,6 @@
       </categories>
       <tags>
         <tag>butterfly</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo添加rss</title>
-    <url>/2024/04/18/hexo%E6%B7%BB%E5%8A%A0rss/</url>
-    <content><![CDATA[<h2 id="插件选择"><a href="#插件选择" class="headerlink" title="插件选择"></a>插件选择</h2><p>根据 butterfly 主题的进阶教程里插件推荐，可以使用 <a href="https://github.com/hexojs/hexo-generator-feed">hexo-generator-feed</a> 插件进行 RSS feed 的制作。</p>
-<p><img src="1.png"></p>
-<p>于是根据 <a href="https://github.com/hexojs/hexo-generator-feed">hexo-generator-feed</a> 的官方教程，一步步进行插件配置。</p>
-<h2 id="hexo-根目录安装插件并配置"><a href="#hexo-根目录安装插件并配置" class="headerlink" title="hexo 根目录安装插件并配置"></a>hexo 根目录安装插件并配置</h2><ol>
-<li>进入 hexo 的根目录，执行如下命令进行插件安装<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-feed --save</span><br></pre></td></tr></table></figure></li>
-<li>根据官方建议配置 hexo 根目录的_config.yml 文件，再_config.yml 文件末尾添加如下配置信息</li>
-</ol>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">feed:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span> <span class="comment">#是否启用插件</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">atom</span> <span class="comment">#有atom和rss2两个选项，使用默认atom就好了</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">atom.xml</span> <span class="comment">#也用默认配置atom.xml就行</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">20</span> <span class="comment">#展示文章的数量,使用 0 或 false 代表展示全部</span></span><br><span class="line">  <span class="attr">hub:</span> <span class="comment">#这个我没用上，根据官网，空着就行</span></span><br><span class="line">  <span class="attr">content:</span> <span class="comment">#默认是false，true的话会在rss文件中包含整个文章内容</span></span><br><span class="line">  <span class="attr">content_limit:</span> <span class="number">140</span> <span class="comment">#摘要长度</span></span><br><span class="line">  <span class="attr">content_limit_delim:</span> <span class="string">&#x27; &#x27;</span> <span class="comment">#没看明白官方的意思，就跟着默认不填了</span></span><br><span class="line">  <span class="attr">order_by:</span> <span class="string">-date</span> <span class="comment">#采用日期进行排序</span></span><br><span class="line">  <span class="attr">icon:</span> <span class="string">icon.png</span> <span class="comment">#给rss链接配置icon</span></span><br><span class="line">  <span class="attr">autodiscovery:</span> <span class="literal">true</span> <span class="comment">#自动发现提要</span></span><br><span class="line">  <span class="attr">template:</span> <span class="comment">#给rss文章配置模板</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="主题目录配置文件"><a href="#主题目录配置文件" class="headerlink" title="主题目录配置文件"></a>主题目录配置文件</h2><ol>
-<li><p>在 butterfly 主题目录下的_config.yml 文件内添加配置内容：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">rss:</span> <span class="string">/atom.xml</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在_config.yml 文件中找到 social settings 项，添加如下内容。（这样主页就能正确显示 RSS 图标了）</p>
-</li>
-</ol>
-  <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">fas fa-rss:</span> <span class="string">https://你的域名地址/atom.xml</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="大功告成"><a href="#大功告成" class="headerlink" title="大功告成"></a>大功告成</h2><p>bash</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>教程</category>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>rss</tag>
       </tags>
   </entry>
   <entry>
@@ -186,6 +186,20 @@
       </categories>
       <tags>
         <tag>butterfly</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于认真遵循文档</title>
+    <url>/2024/04/17/%E5%85%B3%E4%BA%8E%E8%AE%A4%E7%9C%9F%E9%81%B5%E5%BE%AA%E6%96%87%E6%A1%A3/</url>
+    <content><![CDATA[<h1 id="认真读文档即使是你熟知的领域"><a href="#认真读文档即使是你熟知的领域" class="headerlink" title="认真读文档即使是你熟知的领域"></a>认真读文档即使是你熟知的领域</h1><blockquote>
+<p>当我们在这个领域有所了解时，我们看文档就会习惯性的跳过去观看<br>但是这就会导致我们安装出错，安装程序也是如同写代码一般<br>在安装之后，再去排查错误是找不到的</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>杂项</tag>
       </tags>
   </entry>
   <entry>
@@ -274,20 +288,6 @@
 <p> 代码2：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> d2l <span class="keyword">import</span> torch <span class="keyword">as</span> d2l</span><br><span class="line"><span class="built_in">print</span>(os.getcwd())</span><br><span class="line">d2l.set_figsize()</span><br><span class="line">img = d2l.plt.imread(<span class="string">&#x27;./img/OIP-C.jpg&#x27;</span>)</span><br><span class="line">d2l.plt.imshow(img)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 
-]]></content>
-      <categories>
-        <category>杂项</category>
-      </categories>
-      <tags>
-        <tag>杂项</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于认真遵循文档</title>
-    <url>/2024/04/17/%E5%85%B3%E4%BA%8E%E8%AE%A4%E7%9C%9F%E9%81%B5%E5%BE%AA%E6%96%87%E6%A1%A3/</url>
-    <content><![CDATA[<h1 id="认真读文档即使是你熟知的领域"><a href="#认真读文档即使是你熟知的领域" class="headerlink" title="认真读文档即使是你熟知的领域"></a>认真读文档即使是你熟知的领域</h1><blockquote>
-<p>当我们在这个领域有所了解时，我们看文档就会习惯性的跳过去观看<br>但是这就会导致我们安装出错，安装程序也是如同写代码一般<br>在安装之后，再去排查错误是找不到的</p>
-</blockquote>
 ]]></content>
       <categories>
         <category>杂项</category>
