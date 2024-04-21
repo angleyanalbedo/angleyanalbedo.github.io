@@ -53,3 +53,9 @@ cover: https://angleyanalbedo.github.io/img/cover/5.jpg
 
 > `hexo server -s` 静态模式下与部署环境不同会出现问题
 
+### 配置文件中路径的问题
+
+1.尽量使用`/` 而且使用绝对路径`/img/` 
+
+2.`background: `要使用`url()`
+

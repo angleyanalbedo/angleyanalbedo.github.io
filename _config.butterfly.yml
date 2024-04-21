@@ -106,14 +106,14 @@ cover:
 
 # Replace Broken Images (替換無法顯示的圖片)
 error_img:
-  flink: /img/friend_404.gif
-  post_page: /img/404.jpg
+  flink: /img/220131_kohaku_01_ストーリー.gif
+  post_page: /img/220201_kohaku_04_NPC拠点.gif
 
 # A simple 404 page
 error_404:
   enable: true
-  subtitle: 'Page Not Found'
-  background: https://i.loli.net/2020/05/19/aKOcLiyPl2JQdFD.png
+  subtitle: '找不到'
+  background: /img/TP_Fall_30_3.jpg
 
 post_meta:
   page: # Home Page
