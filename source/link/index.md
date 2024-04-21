@@ -14,5 +14,12 @@ date: 2024-04-16 22:53:41
       link: https://hexo.io/zh-tw/
       avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
       descr: 快速、简单且强大的网志框架
+- class_name: batterfly主题
+  class_desc: 一些butterfly的主题
+  link_list:
+    - name: 安知鱼
+      link: https://github.com/anzhiyu-c/hexo-theme-anzhiyu
+      avatar: https://docs.anheyu.com/cover.webp
+      descr: 安之鱼主题
 
 {% endflink %}
