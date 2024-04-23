@@ -133,9 +133,9 @@ feed:
   icon: icon.png
   autodiscovery: true
   template:
-markdown:
-    plugins:
-      - '@renbaoshuo/markdown-it-katex'
+# markdown:
+#     plugins:
+#       - '@renbaoshuo/markdown-it-katex'
 # kramed:
 #   gfm: true
 #   pedantic: false
@@ -144,3 +144,13 @@ markdown:
 #   breaks: true
 #   smartLists: true
 #   smartypants: true
+markdown_it_plus:
+    highlight: true
+    html: true
+    xhtmlOut: true
+    breaks: true
+    langPrefix:
+    linkify: true
+    typographer:
+    quotes: “”‘’
+    pre_class: highlight
