@@ -6,7 +6,7 @@
   <link href="https://angleyanalbedo.github.io/atom.xml" rel="self"/>
   
   <link href="https://angleyanalbedo.github.io/"/>
-  <updated>2025-09-19T13:52:22.009Z</updated>
+  <updated>2025-09-19T15:14:56.629Z</updated>
   <id>https://angleyanalbedo.github.io/</id>
   
   <author>
@@ -17,12 +17,44 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>nerd字体</title>
+    <link href="https://angleyanalbedo.github.io/2025/09/19/nerd%E5%AD%97%E4%BD%93/"/>
+    <id>https://angleyanalbedo.github.io/2025/09/19/nerd%E5%AD%97%E4%BD%93/</id>
+    <published>2025-09-19T15:11:59.000Z</published>
+    <updated>2025-09-19T15:14:56.629Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;安装NerdFont&lt;/h1&gt;
+&lt;h1&gt;安装scoop&lt;/h1&gt;
+&lt;figure class=&quot;highlight sh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>wezterm配置</title>
     <link href="https://angleyanalbedo.github.io/2025/09/19/wezterm%E9%85%8D%E7%BD%AE/"/>
     <id>https://angleyanalbedo.github.io/2025/09/19/wezterm%E9%85%8D%E7%BD%AE/</id>
     <published>2025-09-19T13:52:22.000Z</published>
-    <updated>2025-09-19T13:52:22.009Z</updated>
+    <updated>2025-09-20T02:19:33.620Z</updated>
     
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;我的&lt;code&gt;wezterm&lt;/code&gt;配置,需要msys2支持 配置文件放在&lt;code&gt;~/.config/wezterm/wezterm.lua&lt;/code&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight lua&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
+        
+      
     
     
     
@@ -57,7 +89,7 @@
     <link href="https://angleyanalbedo.github.io/2025/09/19/neovim%E9%85%8D%E7%BD%AE/"/>
     <id>https://angleyanalbedo.github.io/2025/09/19/neovim%E9%85%8D%E7%BD%AE/</id>
     <published>2025-09-19T13:36:44.000Z</published>
-    <updated>2025-09-19T13:45:32.985Z</updated>
+    <updated>2025-09-20T01:22:33.199Z</updated>
     
     
       
@@ -73,6 +105,8 @@
     
     
     
+    
+    <category term="neovim" scheme="https://angleyanalbedo.github.io/tags/neovim/"/>
     
   </entry>
   
@@ -456,31 +490,6 @@
     
     
     <category term="大数据分析" scheme="https://angleyanalbedo.github.io/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于将csv写入mysql</title>
-    <link href="https://angleyanalbedo.github.io/2024/04/20/%E5%85%B3%E4%BA%8E%E5%B0%86csv%E5%86%99%E5%85%A5mysql/"/>
-    <id>https://angleyanalbedo.github.io/2024/04/20/%E5%85%B3%E4%BA%8E%E5%B0%86csv%E5%86%99%E5%85%A5mysql/</id>
-    <published>2024-04-20T08:53:38.000Z</published>
-    <updated>2025-09-19T13:26:31.906Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span</summary>
-        
-      
-    
-    
-    
-    
-    <category term="mysql" scheme="https://angleyanalbedo.github.io/tags/mysql/"/>
-    
-    <category term="数据库" scheme="https://angleyanalbedo.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
