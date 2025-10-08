@@ -2882,4 +2882,83 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">scoop bucket add nerd-fonts         <span class="comment"># 添加字体仓库</span></span><br><span class="line">scoop install JetBrainsMono-NF      <span class="comment"># 下载并自动注册字体</span></span><br></pre></td></tr></table></figure>
 ]]></content>
   </entry>
+  <entry>
+    <title>CharacterGen解析</title>
+    <url>/2025/10/08/CharacterGen%E8%A7%A3%E6%9E%90/</url>
+    <content><![CDATA[<p>这篇论文《CharacterGen: Efficient 3D Character Generation from Single Images with Multi-View Pose Canonicalization》提出了一种高效的方法，可以从<strong>单张2D图像</strong>生成<strong>高质量、可动画化的3D角色模型</strong>。以下是论文的核心内容总结：</p>
+<hr>
+<h3 id="研究目标"><strong>研究目标</strong></h3>
+<p>解决从单张图像生成3D角色模型中的关键挑战，包括：</p>
+<ul>
+<li>姿态复杂性（如自遮挡、姿态歧义）</li>
+<li>外观一致性（多视图间）</li>
+<li>下游任务适配性（如绑定、动画）</li>
+</ul>
+<hr>
+<h3 id="核心贡献"><strong>核心贡献</strong></h3>
+<ol>
+<li>
+<p><strong>提出CharacterGen框架</strong>：</p>
+<ul>
+<li>输入：任意姿态的单张角色图像</li>
+<li>输出：标准“A-pose”下的高质量3D角色模型（含纹理）</li>
+<li>特点：适合直接用于绑定与动画制作</li>
+</ul>
+</li>
+<li>
+<p><strong>多视图扩散模型（Multi-view Diffusion）</strong>：</p>
+<ul>
+<li>引入<strong>IDUNet</strong>：提取输入图像的像素级特征，增强多视图一致性</li>
+<li>引入<strong>姿态嵌入网络</strong>：帮助模型理解角色结构，实现姿态标准化（canonicalization）</li>
+<li>输出：四视图（前后左右）一致的A-pose图像</li>
+</ul>
+</li>
+<li>
+<p><strong>Transformer稀疏视图重建模型</strong>：</p>
+<ul>
+<li>从四视图图像中重建3D几何与粗纹理</li>
+<li>使用SDF（符号距离函数）提升几何质量</li>
+<li>支持从NeRF到SDF的两阶段训练</li>
+</ul>
+</li>
+<li>
+<p><strong>纹理优化策略</strong>：</p>
+<ul>
+<li>利用四视图图像进行<strong>纹理反投影</strong>（back-projection）</li>
+<li>使用**泊松融合（Poisson Blending）**减少纹理缝隙</li>
+</ul>
+</li>
+<li>
+<p><strong>构建Anime3D数据集</strong>：</p>
+<ul>
+<li>包含13,746个动漫风格角色</li>
+<li>多姿态、多视角渲染，用于训练与评估</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="实验结果"><strong>实验结果</strong></h3>
+<ul>
+<li><strong>2D多视图生成质量优于现有方法</strong>（如Zero123、SyncDreamer、IP-Adapter）</li>
+<li><strong>3D几何与纹理质量优于Magic123、ImageDream、TeCH等方法</strong></li>
+<li><strong>生成速度快</strong>：单角色生成时间约为<strong>1分钟</strong>，远快于其他方法（如TeCH需270分钟）</li>
+<li><strong>用户研究显示</strong>：在风格一致性、几何质量、纹理质量等方面，用户显著偏好CharacterGen</li>
+</ul>
+<hr>
+<h3 id="局限与未来方向"><strong>局限与未来方向</strong></h3>
+<ul>
+<li>极端姿态或非典型视角下，生成效果可能下降</li>
+<li>当前聚焦于动漫风格角色，未来可扩展至真人或更复杂风格</li>
+<li>可引入非真实感渲染（NPR）技术进一步提升纹理质量</li>
+<li>可结合SDS优化提升几何细节</li>
+</ul>
+<hr>
+<h3 id="总结"><strong>总结</strong></h3>
+<p>CharacterGen是一个<strong>高效、实用、端到端</strong>的单图像3D角色生成系统，结合了<strong>扩散模型、Transformer重建、纹理优化</strong>等多项技术，显著提升了生成质量与速度，为3D内容创作、虚拟人、游戏开发等应用提供了强有力的工具。</p>
+]]></content>
+      <tags>
+        <tag>模型生成</tag>
+        <tag>论文解读</tag>
+      </tags>
+  </entry>
 </search>
