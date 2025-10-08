@@ -2902,13 +2902,25 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 <ul>
 <li>输入：任意姿态的单张角色图像</li>
 <li>输出：标准“A-pose”下的高质量3D角色模型（含纹理）</li>
-<li>特点：适合直接用于绑定与动画制作</li>
+<li>特点：适合直接用于绑定与动画制作<br>
+<img src="/2025/10/08/CharacterGen%E8%A7%A3%E6%9E%90/image.png" alt="alt text"><br>
+用于生成一致图像的四个视图的管道，展示我们的 IDUNet 如何提取局部像素级特征以加强多视图 UNet。 这里的“Q”、“K”和“V”表示注意力机制中的查询、键和值矩阵。</li>
 </ul>
 </li>
 <li>
 <p><strong>多视图扩散模型（Multi-view Diffusion）</strong>：</p>
 <ul>
-<li>引入<strong>IDUNet</strong>：提取输入图像的像素级特征，增强多视图一致性</li>
+<li>引入<strong>IDUNet</strong>：提取输入图像的像素级特征，增强多视图一致性<br>
+IDUNet 是论文 CharacterGen 中提出的一个条件特征提取网络，全称为 Image Detail UNet（根据功能命名，非官方缩写），其核心作用是从输入的角色图像中提取像素级的外观特征，并用于指导后续的多视图扩散模型生成一致的角色图像。</li>
+</ul>
+<p>| 模块/机制    | 说明                                                    |<br>
+| -------- | ----------------------------------------------------- |<br>
+| <strong>结构</strong>   | 与主扩散模型（Multi-view UNet）<strong>结构相同</strong>，类似于 ControlNet 的设计    |<br>
+| <strong>输入</strong>   | <strong>无噪声的原始图像</strong>（通过 VAE 编码）                               |<br>
+| <strong>输出</strong>   | <strong>像素级图像特征</strong>，用于与扩散模型中的潜变量进行交叉注意力交互                     |<br>
+| <strong>交互方式</strong> | 通过 <strong>Cross-Attention</strong> 机制，将输入图像的 patch 级特征注入到多视图生成过程中 |<br>
+| <strong>优势</strong>   | 保留细节、增强多视图一致性、避免全局特征压缩带来的信息丢失                         |</p>
+<ul>
 <li>引入<strong>姿态嵌入网络</strong>：帮助模型理解角色结构，实现姿态标准化（canonicalization）</li>
 <li>输出：四视图（前后左右）一致的A-pose图像</li>
 </ul>
@@ -2932,7 +2944,8 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 <p><strong>构建Anime3D数据集</strong>：</p>
 <ul>
 <li>包含13,746个动漫风格角色</li>
-<li>多姿态、多视角渲染，用于训练与评估</li>
+<li>多姿态、多视角渲染，用于训练与评估<br>
+Anime3D 是一个大规模、多姿态、多视角、动漫风格的角色数据集，专为训练从单张图像生成标准化3D角色的模型而构建，具有高度的任务针对性和训练价值。</li>
 </ul>
 </li>
 </ol>
@@ -2959,6 +2972,22 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
       <tags>
         <tag>模型生成</tag>
         <tag>论文解读</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>whcihkey的配置</title>
+    <url>/2025/09/21/whcihkey%E7%9A%84%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<ol>
+<li>使用<code>lazyvim</code>的配置</li>
+</ol>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 接着昨天的 which-key 补丁</span></span><br><span class="line"><span class="keyword">return</span> &#123;</span><br><span class="line">  <span class="string">&quot;folke/which-key.nvim&quot;</span>,</span><br><span class="line">  opts = &#123;</span><br><span class="line">    <span class="comment">-- 新版的lazyvim 要求使用spec进行更新</span></span><br><span class="line">    spec = &#123;</span><br><span class="line">      &#123; <span class="string">&quot;&lt;leader&gt;-&quot;</span>, group = <span class="string">&quot;󰉏 Yazi&quot;</span> &#125;, <span class="comment">-- 换成双宽文件夹 󰉏</span></span><br><span class="line">      &#123; <span class="string">&quot;&lt;leader&gt;f&quot;</span>, group = <span class="string">&quot;󰈞 Files&quot;</span> &#125;,</span><br><span class="line">      &#123; <span class="string">&quot;&lt;leader&gt;g&quot;</span>, group = <span class="string">&quot;󰊢 Git&quot;</span> &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>使用<code>which-key</code>api</li>
+</ol>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 先保证 which-key 已加载</span></span><br><span class="line"><span class="keyword">local</span> wk = <span class="built_in">require</span>(<span class="string">&quot;which-key&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 注册 &lt;leader&gt;f 分组：名字 + 图标</span></span><br><span class="line">wk.add(&#123;</span><br><span class="line">  &#123; <span class="string">&quot;&lt;leader&gt;f&quot;</span>, group = <span class="string">&quot;file&quot;</span>, icon = &#123; icon = <span class="string">&quot;&quot;</span>, color = <span class="string">&quot;cyan&quot;</span> &#125; &#125;,</span><br><span class="line">  <span class="comment">-- 继续挂子映射</span></span><br><span class="line">  &#123; <span class="string">&quot;&lt;leader&gt;ff&quot;</span>, <span class="string">&quot;&lt;cmd&gt;Telescope find_files&lt;cr&gt;&quot;</span>, desc = <span class="string">&quot;Find File&quot;</span> &#125;,</span><br><span class="line">  &#123; <span class="string">&quot;&lt;leader&gt;fr&quot;</span>, <span class="string">&quot;&lt;cmd&gt;Recent&lt;cr&gt;&quot;</span>,               desc = <span class="string">&quot;Recent&quot;</span> &#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>neovim</tag>
+        <tag>which-key</tag>
       </tags>
   </entry>
 </search>

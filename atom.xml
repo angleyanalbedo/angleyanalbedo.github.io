@@ -6,7 +6,7 @@
   <link href="https://angleyanalbedo.github.io/atom.xml" rel="self"/>
   
   <link href="https://angleyanalbedo.github.io/"/>
-  <updated>2025-10-08T09:36:57.001Z</updated>
+  <updated>2025-10-08T09:55:08.269Z</updated>
   <id>https://angleyanalbedo.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://angleyanalbedo.github.io/2025/10/08/CharacterGen%E8%A7%A3%E6%9E%90/"/>
     <id>https://angleyanalbedo.github.io/2025/10/08/CharacterGen%E8%A7%A3%E6%9E%90/</id>
     <published>2025-10-08T09:04:24.000Z</published>
-    <updated>2025-10-08T09:36:57.001Z</updated>
+    <updated>2025-10-08T09:55:08.269Z</updated>
     
     
       
@@ -38,6 +38,34 @@
     <category term="模型生成" scheme="https://angleyanalbedo.github.io/tags/%E6%A8%A1%E5%9E%8B%E7%94%9F%E6%88%90/"/>
     
     <category term="论文解读" scheme="https://angleyanalbedo.github.io/tags/%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>whcihkey的配置</title>
+    <link href="https://angleyanalbedo.github.io/2025/09/21/whcihkey%E7%9A%84%E9%85%8D%E7%BD%AE/"/>
+    <id>https://angleyanalbedo.github.io/2025/09/21/whcihkey%E7%9A%84%E9%85%8D%E7%BD%AE/</id>
+    <published>2025-09-21T08:50:47.000Z</published>
+    <updated>2025-10-08T09:57:41.591Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ol&gt;
+&lt;li&gt;使用&lt;code&gt;lazyvim&lt;/code&gt;的配置&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight lua&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    
+    <category term="neovim" scheme="https://angleyanalbedo.github.io/tags/neovim/"/>
+    
+    <category term="which-key" scheme="https://angleyanalbedo.github.io/tags/which-key/"/>
     
   </entry>
   
@@ -467,30 +495,6 @@
     
     
     <category term="工具" scheme="https://angleyanalbedo.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于markdown图片清理</title>
-    <link href="https://angleyanalbedo.github.io/2024/04/21/%E5%85%B3%E4%BA%8Emarkdown%E5%9B%BE%E7%89%87%E6%B8%85%E7%90%86/"/>
-    <id>https://angleyanalbedo.github.io/2024/04/21/%E5%85%B3%E4%BA%8Emarkdown%E5%9B%BE%E7%89%87%E6%B8%85%E7%90%86/</id>
-    <published>2024-04-21T02:42:37.000Z</published>
-    <updated>2025-09-19T13:26:31.906Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;githubAction&quot;&gt;githubAction&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/yiyungent/clear-image-action&quot;&gt;yiyungent/clear-image-action: 🔧 Image</summary>
-        
-      
-    
-    
-    
-    
-    <category term="markdown" scheme="https://angleyanalbedo.github.io/tags/markdown/"/>
     
   </entry>
   
