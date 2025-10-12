@@ -6,7 +6,7 @@
   <link href="https://angleyanalbedo.github.io/atom.xml" rel="self"/>
   
   <link href="https://angleyanalbedo.github.io/"/>
-  <updated>2025-10-08T09:55:08.269Z</updated>
+  <updated>2025-10-12T06:39:14.420Z</updated>
   <id>https://angleyanalbedo.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>使用hexo-assert-image显示文章图片</title>
+    <link href="https://angleyanalbedo.github.io/2025/10/12/%E4%BD%BF%E7%94%A8hexo-assert-image%E6%98%BE%E7%A4%BA%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/"/>
+    <id>https://angleyanalbedo.github.io/2025/10/12/%E4%BD%BF%E7%94%A8hexo-assert-image%E6%98%BE%E7%A4%BA%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/</id>
+    <published>2025-10-12T06:35:31.000Z</published>
+    <updated>2025-10-12T06:39:14.420Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;npm 官方仓库的 &lt;code&gt;hexo-asset-image@1.0.0&lt;/code&gt; 版本有问题&lt;/strong&gt;（路径拼接错误、失效等）；&lt;/li&gt;
+&lt;li&gt;但使用 &lt;strong&gt;GitHub</summary>
+        
+      
+    
+    
+    
+    
+    <category term="hexo" scheme="https://angleyanalbedo.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
     <title>CharacterGen解析</title>
     <link href="https://angleyanalbedo.github.io/2025/10/08/CharacterGen%E8%A7%A3%E6%9E%90/"/>
     <id>https://angleyanalbedo.github.io/2025/10/08/CharacterGen%E8%A7%A3%E6%9E%90/</id>
     <published>2025-10-08T09:04:24.000Z</published>
-    <updated>2025-10-08T09:55:08.269Z</updated>
+    <updated>2025-10-12T06:25:38.383Z</updated>
     
     
       
@@ -470,31 +495,6 @@
     <category term="windows" scheme="https://angleyanalbedo.github.io/tags/windows/"/>
     
     <category term="setwindowshook" scheme="https://angleyanalbedo.github.io/tags/setwindowshook/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>知乎公式复制</title>
-    <link href="https://angleyanalbedo.github.io/2024/04/21/%E7%9F%A5%E4%B9%8E%E5%85%AC%E5%BC%8F%E5%A4%8D%E5%88%B6/"/>
-    <id>https://angleyanalbedo.github.io/2024/04/21/%E7%9F%A5%E4%B9%8E%E5%85%AC%E5%BC%8F%E5%A4%8D%E5%88%B6/</id>
-    <published>2024-04-21T03:57:05.000Z</published>
-    <updated>2025-09-19T13:26:31.917Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;ol&gt;
-&lt;li&gt;浏览器安装油猴插件 &lt;a href=&quot;https://www.tampermonkey.net/&quot;&gt;https://www.tampermonkey.net/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;安装油猴脚本：一键复制 &lt;a</summary>
-        
-      
-    
-    
-    
-    
-    <category term="工具" scheme="https://angleyanalbedo.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
