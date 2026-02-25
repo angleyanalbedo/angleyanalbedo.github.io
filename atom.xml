@@ -6,7 +6,7 @@
   <link href="https://angleyanalbedo.github.io/atom.xml" rel="self"/>
   
   <link href="https://angleyanalbedo.github.io/"/>
-  <updated>2025-10-12T06:39:14.420Z</updated>
+  <updated>2026-02-24T06:40:57.831Z</updated>
   <id>https://angleyanalbedo.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>qt6调试避坑</title>
+    <link href="https://angleyanalbedo.github.io/2026/02/24/qt6%E8%B0%83%E8%AF%95%E9%81%BF%E5%9D%91/"/>
+    <id>https://angleyanalbedo.github.io/2026/02/24/qt6%E8%B0%83%E8%AF%95%E9%81%BF%E5%9D%91/</id>
+    <published>2026-02-24T06:40:34.000Z</published>
+    <updated>2026-02-24T06:40:57.831Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;Qt6 + MSVC 调试配置避坑指南 (CDB Debugger)&lt;/h1&gt;
+&lt;p&gt;如果你在 Windows 下使用 Qt Creator 配合 MSVC</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>使用hexo-assert-image显示文章图片</title>
@@ -468,33 +490,6 @@
     <category term="hadoop" scheme="https://angleyanalbedo.github.io/tags/hadoop/"/>
     
     <category term="大数据" scheme="https://angleyanalbedo.github.io/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>检测鼠标滚轮</title>
-    <link href="https://angleyanalbedo.github.io/2024/04/21/%E6%A3%80%E6%B5%8B%E9%BC%A0%E6%A0%87%E6%BB%9A%E8%BD%AE/"/>
-    <id>https://angleyanalbedo.github.io/2024/04/21/%E6%A3%80%E6%B5%8B%E9%BC%A0%E6%A0%87%E6%BB%9A%E8%BD%AE/</id>
-    <published>2024-04-21T11:54:02.000Z</published>
-    <updated>2025-09-19T13:26:31.913Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;在使用我自己的鼠标有问题时我的gpw1代出现了回滚的问题&quot;&gt;在使用我自己的鼠标有问题时我的gpw1代出现了回滚的问题&lt;/h3&gt;
-&lt;h4 id=&quot;python的方法&quot;&gt;python的方法&lt;/h4&gt;
-&lt;figure class=&quot;highlight</summary>
-        
-      
-    
-    
-    
-    
-    <category term="windows" scheme="https://angleyanalbedo.github.io/tags/windows/"/>
-    
-    <category term="setwindowshook" scheme="https://angleyanalbedo.github.io/tags/setwindowshook/"/>
     
   </entry>
   

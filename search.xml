@@ -3021,4 +3021,53 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
         <tag>hexo</tag>
       </tags>
   </entry>
+  <entry>
+    <title>qt6调试避坑</title>
+    <url>/2026/02/24/qt6%E8%B0%83%E8%AF%95%E9%81%BF%E5%9D%91/</url>
+    <content><![CDATA[<h1>Qt6 + MSVC 调试配置避坑指南 (CDB Debugger)</h1>
+<p>如果你在 Windows 下使用 Qt Creator 配合 MSVC 编译器开发，并且发现<strong>无法设置断点</strong>、<strong>调试直接闪退</strong>或者<strong>变量显示乱码</strong>，这篇指南就是为你准备的。</p>
+<h2 id="⚠️-核心防坑法则：编译器与调试器必须成对！">⚠️ 核心防坑法则：编译器与调试器必须成对！</h2>
+<ul>
+<li>❌ <strong>错误认知</strong>：在 MSVC 编译器下强行使用 LLDB 或 GDB 调试。</li>
+<li>✅ <strong>正确做法</strong>：<strong>MSVC 必须配合 CDB (Console Debugger)</strong> 才能正常调试！</li>
+</ul>
+<h2 id="🎯-最优解：通过-Qt-维护工具一键安装-强烈推荐">🎯 最优解：通过 Qt 维护工具一键安装 (强烈推荐)</h2>
+<p>很多人（包括我）一开始会在 Visual Studio Installer 里疯狂寻找，或者去下载庞大的 Windows SDK，但经常卡 Bug 装不上。其实最简单的方法就藏在 Qt 自己身上！</p>
+<h3 id="第一步：安装-CDB-及-Qt-支持插件">第一步：安装 CDB 及 Qt 支持插件</h3>
+<ol>
+<li>找到并运行 Qt 安装目录下的 <code>Qt Maintenance Tool</code> (Qt 维护工具)。</li>
+<li>登录账号后，选择 <strong>Add or remove components (添加或移除组件)</strong>。</li>
+<li>在组件列表中，展开 <strong>Developer and Designer Tools (开发者和设计者工具)</strong>。</li>
+<li>勾选以下关键选项：
+<ul>
+<li><strong>Debugging Tools for Windows</strong> (这会自动帮你下载微软的 cdb.exe)</li>
+<li><strong>Qt Creator CDB Debugger Support</strong> (这会安装专门解析 QString 等 Qt 类型的插件)</li>
+</ul>
+</li>
+<li>点击下一步完成安装。</li>
+</ol>
+<h3 id="第二步：在-Qt-Creator-中关联调试器">第二步：在 Qt Creator 中关联调试器</h3>
+<ol>
+<li>打开 Qt Creator，进入 <strong>工具 (Tools) -&gt; 选项 (Options)</strong>。</li>
+<li>左侧选择 <strong>Kits (构建套件)</strong>。</li>
+<li>选中你当前使用的 <strong>MSVC 套件</strong> (例如 <code>Desktop Qt 6.x.x MSVC2022 64bit</code>)。</li>
+<li>找到 <strong>Debugger (调试器)</strong> 一栏，点击下拉菜单。</li>
+<li>此时应该能看到带有 <code>Auto-detected</code> (自动检测) 字样的 <strong>CDB</strong> 选项（路径通常在 <code>C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\cdb.exe</code>）。</li>
+<li>选中它，点击 <strong>Apply</strong> 和 <strong>OK</strong>。</li>
+</ol>
+<h2 id="🛠️-备用方案：手动安装-Windows-SDK">🛠️ 备用方案：手动安装 Windows SDK</h2>
+<p>如果 Qt 维护工具因网络原因无法下载，你可以手动去微软官网下载独立的 <strong>Windows 11 SDK</strong> 安装包 (<code>winsdksetup.exe</code>)。</p>
+<ul>
+<li><strong>注意</strong>：安装时<strong>取消所有默认勾选</strong>，只保留 <strong>“Debugging Tools for Windows”</strong> 一项，否则可能会与现有的 VS 环境冲突。</li>
+</ul>
+<h2 id="💡-终极检查清单-排错必看">💡 终极检查清单 (排错必看)</h2>
+<p>当你配置好 CDB 后依然无法调试，请检查以下两点：</p>
+<ol>
+<li><strong>构建模式</strong>：Qt Creator 左下角的构建模式必须是 <strong>Debug</strong>，不能是 Release（Release 不生成 <code>.pdb</code> 符号文件，无法打断点）。</li>
+<li><strong>清理重构</strong>：切换调试器后，最好右键项目 -&gt; <strong>清理 (Clean)</strong>，然后重新 <strong>构建 (Build)</strong>。</li>
+</ol>
+<hr>
+<p><em>📝 记录于 2026年 - 献给所有在 MSVC 调试器配置中挣扎过的 Qt 开发者。</em></p>
+]]></content>
+  </entry>
 </search>
